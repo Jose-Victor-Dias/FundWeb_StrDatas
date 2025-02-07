@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript exercicios 1-10</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #000000;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: rgb(255, 255, 255);
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+    }
+
+    .input-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input, textarea, select, button {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+      border-radius: 4px;
+      border: 1px solid #565656;
+    }
+
+    button {
+      background-color: #ff9d00;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #3407e8;
+    }
+
+    .output {
+      margin-top: 20px;
+      padding: 10px;
+      background: #e9ecef;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Funções dos exercicios de JavaScript</h1>
+
+    <div class="input-group">
+      <label for="funcao">Escolha a Função:</label>
+      <select id="funcao">
+        <option value="inverterCaracteres">Inverter Caracteres</option>
+        <option value="marcarVogais">Marcar Vogais</option>
+        <option value="contarPalavras">Contar Palavras</option>
+        <option value="palavraMaiorOcorrencia">Palavra de Maior Ocorrência</option>
+        <option value="substituirTexto">Substituir Texto</option>
+        <option value="calcularDiasVividos">Calcular Dias Vividos</option>
+        <option value="dataPorExtenso">Data por Extenso</option>
+        <option value="diferencaSemanas">Diferença em Semanas</option>
+        <option value="classificarTexto">Classificar Texto</option>
+        <option value="codificarTENIS">Codificar TENIS</option>
+      </select>
+    </div>
+
+    <div class="input-group">
+      <label for="parametros">Parâmetros (separados por vírgula):</label>
+      <input type="text" id="parametros" placeholder="Digite os parâmetros da função">
+    </div>
+
+    <button onclick="executar()">Executar Função</button>
+
+    <div class="output" id="output">O resultado será exibido aqui.</div>
+  </div>
+
+  <script src="exercicios.js"></script>
+  <script>
+    function executar() {
+      const funcao = document.getElementById('funcao').value;
+      const parametros = document.getElementById('parametros').value.split(',');
+      const resultado = executarFuncao(funcao, ...parametros.map(param => param.trim()));
+      document.getElementById('output').textContent = resultado;
+    }
+  </script>
+</body>
+</html>
